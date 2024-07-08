@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color: #f7ca01;
+  --white-color: #fff;
+  --secondary-color: #6f2c82;
+  --gray-color: #888;
+  --color-green: #008000;
+  --color-red: #ff0000;
+}
+
+body {
+  background: var(--secondary-color);
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  gap: 2rem;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-container input {
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0 6px 6px 0;
+  font-size: 1.8rem;
+  outline: none;
+}
+
+.form-container button[type="submit"] {
+  position: relative;
+  transform: translateX(4px);
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px 0 0 6px;
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container button[type="submit"]:hover {
+  background: var(--white-color);
+  color: var(--primary-color);
+}
+
+.filter-todos {
+  padding: 1rem;
+  font-size: 1.8rem;
+  width: 140px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  background: var(--primary-color);
+  appearance: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.select {
+  position: relative;
+}
+
+.select::after {
+  content: url(../assets/image/chevron-down-solid.svg);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+button > i {
+  pointer-events: none;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 410px;
+  gap: 2rem;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  gap: 2rem;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.todo__info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todo__info button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.todo__edit:hover {
+  color: var(--white-color);
+}
+
+.todo__check:hover {
+  color: var(--color-green);
+}
+
+.todo__remove:hover {
+  color: var(--color-red);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.modal {
+  background: var(--primary-color);
+  border-radius: 6px;
+  padding: 4rem;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.modal header h2 {
+  font-size: 2rem;
+  color: var(--white-color);
+}
+
+.edit-input {
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0 6px 6px 0;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.modal button[type="submit"] {
+  position: relative;
+  transform: translateX(5px);
+  padding: 1rem;
+  border: 2px 0 2px 2px solid var(--primary-color);
+  border-radius: 6px 0 0 6px;
+  background: var(--white-color);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal button[type="submit"]:hover {
+  color: var(--primary-color);
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 590px) {
+  .form-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-container input {
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+    font-size: 1.8rem;
+    outline: none;
+  }
+  
+  .form-container button[type="submit"] {
+    position: relative;
+    transform: translateX(4px);
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px 0 0 6px;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .todo-list {
+    width: 300px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}

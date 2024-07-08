@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="./style/font.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <h1>لیست کار ها</h1>
+      </header>
+      <div class="form-container">
+        <form class="todo-form">
+          <input type="text" class="todo-input" placeholder="افزودن کار" />
+          <button type="submit">
+            <i class="fas fa-plus-circle"></i>
+          </button>
+        </form>
+        <div class="select">
+          <select class="filter-todos" name="todos">
+            <option value="all">همه موارد</option>
+            <option value="completed">تکمیل شده</option>
+            <option value="uncompleted">تکمیل نشده</option>
+          </select>
+        </div>
+      </div>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+      <div class="backdrop hidden">
+        <div class="modal">
+          <header>
+            <h2>ویرایش</h2>
+          </header>
+          <div class="modal-content">
+            <form class="edit-form">
+              <input type="text" class="edit-input" placeholder="عنوان جدید" />
+              <button type="submit">
+                <i class="fas fa-check"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>
